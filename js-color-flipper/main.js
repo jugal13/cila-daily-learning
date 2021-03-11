@@ -1,7 +1,6 @@
 let simple = true;
 const bodyText = document.getElementById("body-text");
 const links = document.querySelectorAll(".btn");
-console.log(bodyText);
 
 function generate() {
   const bgColor = simple ? generateSimple() : generateHex();
