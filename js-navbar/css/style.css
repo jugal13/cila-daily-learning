@@ -1,0 +1,97 @@
+body {
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-color: #ebf7ff;
+}
+
+nav {
+  background-color: #fff;
+}
+
+nav .nav-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+}
+
+nav .nav-header h2 {
+  text-shadow: 1px 4px 5px #555;
+  letter-spacing: 0.2rem;
+  margin: 0;
+  font-size: 2.4rem;
+}
+
+nav .nav-header h2 span {
+  margin-left: 0.75rem;
+  color: #49a6e9;
+}
+
+nav .nav-header .nav-toggle {
+  font-size: 1.5rem;
+  color: #49a6e9;
+  background: transparent;
+  border-color: transparent;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+}
+
+nav .nav-header .nav-toggle:hover {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+nav .nav-items {
+  height: 0;
+  overflow: hidden;
+  padding: 0 1rem;
+  margin: 0;
+  list-style-type: none;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+}
+
+nav .nav-items .nav-item {
+  font-size: 1.3rem;
+  padding: 0.5rem 0;
+}
+
+nav .show-list {
+  height: 10rem;
+}
+
+@media all and (min-width: 800px) {
+  .nav-toggle {
+    display: none;
+  }
+  nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 1rem;
+  }
+  nav .nav-items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: auto;
+  }
+  nav .nav-items .nav-item {
+    padding: 0 0.4rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */
