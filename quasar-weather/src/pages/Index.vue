@@ -1,5 +1,8 @@
 <template>
-  <q-page class="flex column" :class="bgClass">
+  <q-page
+    class="flex column"
+    :class="bgClass"
+  >
     <div class="col q-pt-lg q-px-md">
       <q-input
         v-model="search"
@@ -9,11 +12,20 @@
         @keyup.enter="getWeatherBySearch"
       >
         <template v-slot:before>
-          <q-icon name="my_location" @click="getLocation" />
+          <q-icon
+            name="my_location"
+            @click="getLocation"
+          />
         </template>
 
         <template v-slot:append>
-          <q-btn round dense flat icon="search" @click="getWeatherBySearch" />
+          <q-btn
+            round
+            dense
+            flat
+            icon="search"
+            @click="getWeatherBySearch"
+          />
         </template>
       </q-input>
     </div>
@@ -41,8 +53,16 @@
       <div class="col column text-center text-white">
         <div class="col text-h2 text-weight-thin">Quasar Weather</div>
 
-        <q-btn class="col" flat @click="getLocation">
-          <q-icon left size="3em" name="my_location"></q-icon>
+        <q-btn
+          class="col"
+          flat
+          @click="getLocation"
+        >
+          <q-icon
+            left
+            size="3em"
+            name="my_location"
+          ></q-icon>
           <div>Find My Location</div>
         </q-btn>
       </div>
@@ -78,11 +98,20 @@ export default {
   methods: {
     getLocation() {
       this.$q.loading.show();
-      navigator.geolocation.getCurrentPosition((position) => {
-        this.latitude = position.coords.latitude;
-        this.longitude = position.coords.longitude;
-        this.getWeatherByCoords();
-      });
+
+      if (this.$q.platform.is.electron) {
+        this.$axios("https://freegeoip.app/json/").then((response) => {
+          this.latitude = response.data.latitude;
+          this.longitude = response.data.longitude;
+          this.getWeatherByCoords();
+        });
+      } else {
+        navigator.geolocation.getCurrentPosition((position) => {
+          this.latitude = position.coords.latitude;
+          this.longitude = position.coords.longitude;
+          this.getWeatherByCoords();
+        });
+      }
     },
     getWeatherByCoords() {
       this.$q.loading.show();
