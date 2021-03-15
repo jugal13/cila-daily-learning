@@ -12,6 +12,11 @@
 2. iOS
 3. Web
 
+# SmackChat
+
+1. Part 1: Page setup, router setup
+2. Part 2: Users page
+3. Part 3: Chat page
 
 ## Days
 
@@ -41,3 +46,21 @@
         1. Mutations
         2. Getters
         3. Actions
+
+4. VueX & SmackChat
+
+    1. VueX
+
+        1. Shopping Cart
+        2. Dynamic VueX Getters
+        3. Map Helpers
+        4. VueX Modules
+        5. Namespaced Modules
+    
+    2. SmackChat 
+
+        1. Part 1: Page setup, router setup
+        2. Part 2: Users page
+        3. Part 3: Chat page
+
+
