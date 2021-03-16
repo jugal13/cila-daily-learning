@@ -43,7 +43,6 @@ export default {
   computed: {
     title() {
       const currentPath = this.$route.path;
-      console.log(currentPath);
       if (currentPath === "/") {
         return "SmackChat";
       }
