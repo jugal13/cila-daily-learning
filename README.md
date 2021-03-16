@@ -60,7 +60,19 @@
     2. SmackChat 
 
         1. Part 1: Page setup, router setup
-        2. Part 2: Users page
-        3. Part 3: Chat page
+        2. Part 2: Users page UI
+        3. Part 3: Chat page UI
 
 
+5. Videos
+
+    1. Git Practise
+    2. HTML/CSS
+        1. HTML Tags
+        2. CSS Styling 
+    3. ES6 Fundamentals
+    4. Vue Fundamentals
+    5. Vue Component Fundamentals
+    6. Quasar Overview
+    7. SmackChat
+        1. Part 4: Auth Page UI 
