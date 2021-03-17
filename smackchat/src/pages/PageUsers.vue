@@ -1,6 +1,7 @@
 <template>
   <q-page class="flex q-pa-md">
     <q-list
+      v-if="users"
       class="full-width"
       separator
     >

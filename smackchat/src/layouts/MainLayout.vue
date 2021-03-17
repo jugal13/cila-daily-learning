@@ -4,6 +4,7 @@
       <q-toolbar>
         <q-btn
           v-if="$route.path.includes('/chat')"
+          class="absolute-left"
           v-go-back.single
           icon="arrow_back"
           flat
@@ -79,6 +80,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.platform-ios {
+  .q-header {
+    .q-btn,
+    .q-toolbar__title {
+      padding-top: constant(safe-area-inset-top);
+      padding-top: env(safe-area-inset-top);
+    }
+  }
+}
+
 .q-toolbar {
   .q-btn {
     line-height: 1.2;

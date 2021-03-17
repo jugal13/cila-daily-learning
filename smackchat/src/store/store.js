@@ -76,12 +76,15 @@ const actions = {
         dispatch("firebaseGetUsers");
         this.$router.push("/").catch(e => {});
       } else {
-        dispatch("firebaseUpdateUser", {
-          userId: state.userDetails.userId,
-          updates: {
-            online: false
-          }
-        });
+        console.log("logged out: OFFLINE");
+        if (state.userDetails.userId) {
+          dispatch("firebaseUpdateUser", {
+            userId: state.userDetails.userId,
+            updates: {
+              online: false
+            }
+          });
+        }
         commit("setUserDetails", {});
         this.$router.replace("/auth").catch(e => {});
       }
