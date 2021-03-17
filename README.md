@@ -76,3 +76,15 @@
     6. Quasar Overview
     7. SmackChat
         1. Part 4: Auth Page UI 
+        2. Part 5: VueX & Firebase Setup
+        3. Part 6 & 7: DB Set up, FirebaseAuth Actions
+
+6. SmackChat
+
+    1. Part 8: Login, AuthState, User Details
+    2. Part 9 & 10: Login, Logout, User State, Online Status, Fetch Users
+    3. Part 11: Load and clear chat messages in state
+    4. Part 12: Fixing Details in Chat Page
+    5. Part 13: Sending Messages
+    6. Part 14: UX Fixes (Scroll)
+    7. Part 15: Build for macOS and iOS
