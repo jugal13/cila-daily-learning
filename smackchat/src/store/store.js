@@ -123,6 +123,18 @@ const actions = {
       messagesRef.off("child_added");
     }
     commit("clearMessages");
+  },
+
+  firebaseSendMessage({ state }, payload) {
+    firebaseDb
+      .ref(`chats/${state.userDetails.userId}/${payload.otherUserId}`)
+      .push(payload.message);
+    firebaseDb
+      .ref(`chats/${payload.otherUserId}/${state.userDetails.userId}`)
+      .push({
+        text: payload.message.text,
+        from: "them"
+      });
   }
 };
 
