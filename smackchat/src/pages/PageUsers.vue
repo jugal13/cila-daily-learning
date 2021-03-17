@@ -5,11 +5,11 @@
       separator
     >
       <q-item
-        v-for="user in users"
-        :key="user.userId"
+        v-for="(user, key) in users"
+        :key="key"
         clickable
         v-ripple
-        to="/chat"
+        :to="`/chat/${key}`"
       >
         <q-item-section avatar>
           <q-avatar

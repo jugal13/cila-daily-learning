@@ -63,6 +63,9 @@ export default {
       if (currentPath === "/auth") {
         return "Login";
       }
+      if (currentPath.includes("/chat")) {
+        return "Chat";
+      }
       return currentPath[1].toUpperCase() + currentPath.slice(2);
     },
   },
