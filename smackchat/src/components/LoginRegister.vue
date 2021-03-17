@@ -16,6 +16,7 @@
     <q-input
       outlined
       class="q-mb-md"
+      type="password"
       v-model="formData.password"
       label="Password"
     />
@@ -31,6 +32,8 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   props: ["tab"],
   data() {
@@ -43,11 +46,12 @@ export default {
     };
   },
   methods: {
+    ...mapActions("store", ["registerUser", "loginUser"]),
     submitForm() {
-      if (tab === "login") {
-        console.log("Login");
+      if (this.tab === "login") {
+        this.loginUser(this.formData);
       } else {
-        console.log("Regsiter");
+        this.registerUser(this.formData);
       }
     },
   },

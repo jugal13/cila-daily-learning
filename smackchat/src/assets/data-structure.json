@@ -1,0 +1,40 @@
+{
+  "users": {
+    "userId1": {
+      "name": "Danny",
+      "email": "danny@test.com",
+      "online": true
+    },
+    "userId2": {
+      "name": "Jim",
+      "email": "jim@test.com",
+      "online": true
+    }
+  },
+  "chats": {
+    "userId1": {
+      "userId2": {
+        "MessageId1": {
+          "text": "Hi! How are you?",
+          "from": "them"
+        },
+        "MessageId2": {
+          "text": "Good thanks, how are you?",
+          "from": "me"
+        }
+      }
+    },
+    "userId2": {
+      "userId1": {
+        "MessageId1": {
+          "text": "Hi! How are you?",
+          "from": "me"
+        },
+        "MessageId2": {
+          "text": "Good thanks, how are you?",
+          "from": "them"
+        }
+      }
+    }
+  }
+}
