@@ -46,9 +46,11 @@
 
 <script>
 import { mapState, mapActions } from "vuex";
+import mixinOtherUserDetails from "src/mixins/otherUserDetails";
 
 export default {
   name: "MainLayout",
+  mixins: [mixinOtherUserDetails],
   data() {
     return {};
   },
@@ -64,7 +66,7 @@ export default {
         return "Login";
       }
       if (currentPath.includes("/chat")) {
-        return "Chat";
+        return this.otherUserDetails.name;
       }
       return currentPath[1].toUpperCase() + currentPath.slice(2);
     },
