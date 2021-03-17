@@ -6,7 +6,7 @@
     >
       <q-item
         v-for="user in users"
-        :key="user.id"
+        :key="user.userId"
         clickable
         v-ripple
         to="/chat"
@@ -36,27 +36,11 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
-  data() {
-    return {
-      users: [
-        {
-          id: 1,
-          name: "Danny",
-          online: true,
-        },
-        {
-          id: 2,
-          name: "Jim",
-          online: false,
-        },
-        {
-          id: 3,
-          name: "Lucy",
-          online: true,
-        },
-      ],
-    };
+  computed: {
+    ...mapGetters("store", ["users"]),
   },
 };
 </script>

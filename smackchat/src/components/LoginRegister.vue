@@ -40,8 +40,8 @@ export default {
     return {
       formData: {
         name: "",
-        email: "",
-        password: "",
+        email: "danny@test.com",
+        password: "danny123",
       },
     };
   },
