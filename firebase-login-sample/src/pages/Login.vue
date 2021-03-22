@@ -1,27 +1,40 @@
 <template>
-  <q-page class="flex">
-    <h3>Login</h3>
-    <form @submit.prevent="login">
-      <div class="login">
-        <input
-          type="text"
-          placeholder="login"
+  <q-page class="flex column">
+    <div class="col q-pa-lg">
+      <q-form
+        @submit="login"
+        class="q-gutter-md"
+      >
+        <q-input
+          outlined
           v-model="email"
+          label="Email"
         />
-      </div>
-      <div class="password">
-        <input
+        <q-input
+          outlined
           type="password"
-          placeholder="password"
           v-model="password"
+          label="Password"
         />
-      </div>
-      <button>Login</button>
-    </form>
-    <div
-      class="error"
-      v-if="error"
-    >{{error}}</div>
+
+        <div class="row">
+          <q-space></q-space>
+          <q-btn
+            type="submit"
+            color="primary"
+            label="Login"
+          />
+        </div>
+
+      </q-form>
+
+      <q-banner
+        class="text-white bg-red"
+        v-if="error"
+      >
+        {{ error }}
+      </q-banner>
+    </div>
   </q-page>
 </template>
 
@@ -37,7 +50,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions("store", ["signInWithEmailAndPassword"]),
+    ...mapActions("user", ["signInWithEmailAndPassword"]),
     async login() {
       try {
         const data = {
@@ -55,23 +68,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-div {
-  color: inherit;
-}
-input {
-  width: 400px;
-  padding: 30px;
-  margin: 20px;
-  font-size: 21px;
-}
-
-button {
-  width: 400px;
-  height: 75px;
-  font-size: 100%;
-}
-
-.error {
-  color: red;
-}
 </style>
