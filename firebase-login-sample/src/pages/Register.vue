@@ -1,27 +1,40 @@
 <template>
-  <q-page class="flex">
-    <div
-      class="error"
-      v-if="error"
-    >{{error}}</div>
-    <form @submit.prevent="register">
-      Register
-      <div class="email">
-        <input
-          type="email"
+  <q-page class="flex column">
+    <div class="col q-pa-lg">
+      <q-form
+        @submit="register"
+        class="q-gutter-md"
+      >
+        <q-input
+          outlined
           v-model="email"
-          placeholder="email"
+          label="Email"
         />
-      </div>
-      <div class="password">
-        <input
+        <q-input
+          outlined
           type="password"
           v-model="password"
-          placeholder="password"
+          label="Password"
         />
-      </div>
-      <button type="submit">Register</button>
-    </form>
+
+        <div class="row">
+          <q-space></q-space>
+          <q-btn
+            type="submit"
+            color="primary"
+            label="Register"
+          />
+        </div>
+
+      </q-form>
+
+      <q-banner
+        class="text-white bg-red"
+        v-if="error"
+      >
+        {{ error }}
+      </q-banner>
+    </div>
   </q-page>
 </template>
 
@@ -37,7 +50,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions("store", ["createUserWithEmailAndPassword"]),
+    ...mapActions("user", ["createUserWithEmailAndPassword"]),
     async register() {
       try {
         const data = {
@@ -55,20 +68,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.error {
-  color: red;
-  font-size: 18px;
-}
-input {
-  width: 400px;
-  padding: 30px;
-  margin: 20px;
-  font-size: 21px;
-}
-
-button {
-  width: 400px;
-  height: 75px;
-  font-size: 100%;
-}
 </style>
